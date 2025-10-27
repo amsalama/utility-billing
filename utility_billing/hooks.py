@@ -5,15 +5,55 @@ app_description = "Utility Billing & Property Management"
 app_email = "support@navari.co.ke"
 app_license = "agpl-3.0"
 
+
 fixtures = [
     {
         "doctype": "Item Group",
         "or_filters": [
             ["name", "in", ["Utility and Rental"]],
-            ["parent_item_group", "in", ["Utility and Rental"]]
-        ]
-    }
+            ["parent_item_group", "in", ["Utility and Rental"]],
+        ],
+    },
+    {
+        "doctype": "Custom Field",
+        "filters": [
+            [
+                "dt",
+                "in",
+                [
+                    "Quotation",
+                    "Sales Order",
+                    "Delivery Note",
+                    "Sales Invoice",
+                    "Payment Entry",
+                    "Payment Request",
+                    "Material Request",
+                    "Supplier Quotation",
+                    "Purchase Order",
+                    "Purchase Receipt",
+                    "Purchase Invoice",
+                    "Contract",
+                    "Issue",
+                    "Asset",
+                    "Meter Reading",
+                    "Utility Service Request",
+                    "Sales Order Item",
+                    "Sales Invoice Item",
+                    "Item Group",
+                ],
+            ],
+            [
+                "fieldname",
+                "in",
+                [
+                    "utility_property",
+                    "is_utility_item_group",
+                ],
+            ],
+        ],
+    },
 ]
+
 
 accounting_dimension_doctypes = [
     "Utility Bill Structure",

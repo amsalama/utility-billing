@@ -60,7 +60,7 @@ frappe.query_reports["Meter Reading Summary"] = {
 			reqd: 0,
 		},
 		{
-			fieldname: "utility_property",
+			fieldname: "property",
 			label: __("Property"),
 			fieldtype: "Link",
 			options: "Utility Property",

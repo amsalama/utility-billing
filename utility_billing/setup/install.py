@@ -1,5 +1,9 @@
 import frappe
 
+def after_install():
+    # Make sure required custom fields exist even at first install
+    ensure_fields() 
+
 def create_utility_property_dimension():
     try:
         dimension_name = "Utility Property"
