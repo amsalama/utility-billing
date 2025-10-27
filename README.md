@@ -121,6 +121,19 @@ bench get-app utility_billing https://github.com/navariltd/utility-billing.git
 bench --site [site_name] install-app utility_billing
 ```
 
+## clear and setup demo
+```bash
+~/frappe-bench/apps/utility_billing$ bench --site frontend console
+
+bench --site frontend console
+from utility_billing.utility_billing.patches.demo.setup import delete_demo_data
+delete_demo_data()
+
+
+from utility_billing.utility_billing.patches.demo.setup import run_demo_setup
+run_demo_setup()
+```
+
 ## 📚 Documentation & Support
 
 Need help? Browse detailed guides, FAQs, or open an issue in our GitHub repo.
